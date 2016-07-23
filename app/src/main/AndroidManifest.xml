@@ -36,6 +36,15 @@
             </intent-filter>
         </service>
         <service android:name="com.aravindputrevu.android.stockhawk.service.StockIntentService" />
+
+        <receiver android:name="com.aravindputrevu.android.stockhawk.appwidget.AppWidgetConfigure"
+            android:label="My widget label" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_info" />
+        </receiver>
         <provider
             android:authorities="com.aravindputrevu.android.stockhawk.data.QuoteProvider"
             android:name="com.aravindputrevu.android.stockhawk.data.generated.QuoteProvider"
